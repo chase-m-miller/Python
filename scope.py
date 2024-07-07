@@ -1,14 +1,14 @@
-number = 42
+word = 'global'
 
 def doLocal():
-    number = 27
-
-doLocal()
-print(number)
+    word = 'Altered by: doLocal'
 
 def doGlobal():
-    global number
-    number = 10
+    global word
+    word = 'Altered by: doGlobal'
+
+doLocal()
+print(word)
 
 doGlobal()
-print(number)
+print(word)
