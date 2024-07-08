@@ -4,9 +4,15 @@ def collatz(number):
     else:
         return 3 * number + 1
 
+userInput = None
 print('Enter a number.')
+while userInput == None:
+    try:
+        userInput = int(input())
+    except ValueError:
+        print('You must enter an integer.')
 
-result = collatz(int(input()))
+result = collatz(userInput)
 while True:
     if result == 1:
         break
