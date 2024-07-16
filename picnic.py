@@ -5,7 +5,7 @@ allGuests = {'Alice': {'apples': 5, 'pretzels': 12},
 def totalBrought(guests, item):
     numItem = 0
     for k, v in guests.items():
-        numItem = numItem + v.get(item, 0)
+        numItem += v.get(item, 0)
     return numItem
 
 print('Number of things being brought:')
