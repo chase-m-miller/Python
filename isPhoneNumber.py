@@ -1,25 +1,19 @@
+import re  # import regular expression functionality
+
+
 def isPhoneNumber(text):
-    if len(text) != 12:
+    phoneNumRegex = re.compile(r'\d{3}-\d{3}-\d{4}')
+    # mo stand for match object
+    mo = phoneNumRegex.match(text)
+    if mo is not None:
+        return True
+    else:
         return False
-    for i in range(0, 3):
-        if not text[i].isdecimal():
-            return False
-    if text[3] != '-':
-        return False
-    for i in range(4, 7):
-        if not text[i].isdecimal():
-            return False
-    if text[7] != '-':
-        return False
-    for i in range(8, 12):
-        if not text[i].isdecimal():
-            return False
-    return True
 
 
-message = 'Call me at 415-555-1011 tomorrow. 415-555-9999 is my office.'
-for i in range(len(message)):
-    chunk = message[i:i+12]
-    if isPhoneNumber(chunk):
-        print('Phone number found: ' + chunk)
-print('Done')
+phoneNum = '123-425-1231'
+ssNum = '123-51-5231'
+print('Is ' + phoneNum + ' a phone number?')
+print(isPhoneNumber(phoneNum))
+print('Is ' + ssNum + ' a phone number?')
+print(isPhoneNumber(ssNum))
