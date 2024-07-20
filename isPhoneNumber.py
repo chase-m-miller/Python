@@ -5,10 +5,7 @@ def isPhoneNumber(text):
     phoneNumRegex = re.compile(r'\d{3}-\d{3}-\d{4}')
     # mo stand for match object
     mo = phoneNumRegex.match(text)
-    if mo is not None:
-        return True
-    else:
-        return False
+    return bool(mo)
 
 
 phoneNum = '123-425-1231'
