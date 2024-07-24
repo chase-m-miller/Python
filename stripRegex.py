@@ -3,6 +3,8 @@
 
 import re
 
+whitespaceRegex = re.compile(r'^(\s)*(\s)*$')
+
 # TODO: Implement regexStrip()
 
 # TODO: Call regexStrip() with multiple parameters
