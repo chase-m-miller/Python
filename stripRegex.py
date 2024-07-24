@@ -3,8 +3,14 @@
 
 import re
 
-whitespaceRegex = re.compile(r'^(\s)*(\s)*$')
 
-# TODO: Implement regexStrip()
+def regexStrip(text):
+    # remove whitespace from beginning of string
+    text = re.sub(r'^\s+', '', text)
+    # remove whitespace from end of string
+    text = re.sub(r'\s+$', '', text)
+    print(text)
 
-# TODO: Call regexStrip() with multiple parameters
+
+regexStrip('   Does this work?   ')
+regexStrip('\t\t\tHow about this?\t\t\t')
