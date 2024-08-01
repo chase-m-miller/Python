@@ -5,9 +5,16 @@
 
 import re
 
+# Test input as regex.
+print('Enter a regular expression: ', end='')
+userRegex = input()
+print(userRegex)
+
 # TODO: Get regular expression from user.
 
 # TODO: Search cwd for .txt files and open all of them.
 
-# TODO: Search the .txt files for lines matching
-#       regex and print them to the screen.
+# TODO: Search the .txt files for lines matching regex
+#       and print them to the screen.
+
+# TODO: Close all of the opened .txt files.
