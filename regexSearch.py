@@ -6,9 +6,12 @@
 import re
 
 # Test input as regex.
+testString = 'String to match'
 print('Enter a regular expression: ', end='')
-userRegex = input()
-print(userRegex)
+userInput = input()
+print(userInput)
+userRegex = re.compile(userInput)
+print(userRegex.search(testString))
 
 # TODO: Get regular expression from user.
 
