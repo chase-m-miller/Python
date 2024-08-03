@@ -4,6 +4,7 @@
 # regular expression. The result is printed to the screen.
 
 import re
+import os
 
 # Test input as regex.
 testString = 'String to match'
@@ -16,6 +17,8 @@ print(userRegex.search(testString))
 # TODO: Get regular expression from user.
 
 # TODO: Search cwd for .txt files and open all of them.
+for file in os.getcwd():
+    print('Is this working?')
 
 # TODO: Search the .txt files for lines matching regex
 #       and print them to the screen.
