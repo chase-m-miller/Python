@@ -17,8 +17,9 @@ print(userRegex.search(testString))
 # TODO: Get regular expression from user.
 
 # TODO: Search cwd for .txt files and open all of them.
-for file in os.getcwd():
-    print('Is this working?')
+for filename in os.listdir(r'./'):
+    file = os.path.join(r'./', filename)
+    print(file)
 
 # TODO: Search the .txt files for lines matching regex
 #       and print them to the screen.
