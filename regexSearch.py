@@ -20,11 +20,11 @@ print(userRegex.search(testString))
 for filename in os.listdir('./'):
     file = os.path.join('./', filename)
     if os.path.isfile(file) and userRegex.search(file):
-        print(filename)
-        print('____________________________')
         openedFile = open(file, 'r')
         fileContents = openedFile.read()
         if userRegex.search(fileContents):
+            print(filename)
+            print('____________________________')
             print(fileContents)
         print(openedFile.read())
         openedFile.close()
