@@ -6,19 +6,15 @@
 import re
 import os
 
-# Test input as regex.
-testString = 'String to match'
+# Get regular expression from user.
 print('Enter a regular expression: ', end='')
 userInput = input()
-print(userInput)
 userRegex = re.compile(userInput)
-print(userRegex.search(testString))
 
-# TODO: Get regular expression from user.
 
 # TODO: Search cwd for .txt files and open all of them.
-for filename in os.listdir('./'):
-    file = os.path.join('./', filename)
+for filename in os.listdir('.'):
+    file = os.path.join('.', filename)
     if os.path.isfile(file) and userRegex.search(file):
         openedFile = open(file, 'r')
         fileContents = openedFile.read()
