@@ -19,9 +19,12 @@ print(userRegex.search(testString))
 # TODO: Search cwd for .txt files and open all of them.
 for filename in os.listdir('./'):
     file = os.path.join('./', filename)
-    openedFile = open(file, 'r')
-    print(openedFile)
-    openedFile.close()
+    if os.path.isfile(file):
+        print(filename)
+        print('____________________________')
+        openedFile = open(file, 'r')
+        print(openedFile.read())
+        openedFile.close()
 
 # TODO: Search the .txt files for lines matching regex
 #       and print them to the screen.
