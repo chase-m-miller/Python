@@ -19,10 +19,13 @@ print(userRegex.search(testString))
 # TODO: Search cwd for .txt files and open all of them.
 for filename in os.listdir('./'):
     file = os.path.join('./', filename)
-    if os.path.isfile(file):
+    if os.path.isfile(file) and userRegex.search(file):
         print(filename)
         print('____________________________')
         openedFile = open(file, 'r')
+        fileContents = openedFile.read()
+        if userRegex.search(fileContents):
+            print(fileContents)
         print(openedFile.read())
         openedFile.close()
 
