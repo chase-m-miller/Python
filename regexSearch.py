@@ -22,7 +22,6 @@ for filename in os.listdir('.'):
             print(filename)
             print('____________________________')
             print(fileContents)
-        # print(openedFile.read())
         openedFile.close()
 
 # TODO: Search the .txt files for lines matching regex
