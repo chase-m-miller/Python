@@ -23,8 +23,3 @@ for filename in os.listdir('.'):
             print('____________________________')
             print(fileContents)
         openedFile.close()
-
-# TODO: Search the .txt files for lines matching regex
-#       and print them to the screen.
-
-# TODO: Close all of the opened .txt files.
