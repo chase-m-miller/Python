@@ -14,9 +14,9 @@ userRegex = re.compile(userInput)
 
 # TODO: Search cwd for .txt files and open all of them.
 for filename in os.listdir('.'):
-    file = os.path.join('.', filename)
-    if os.path.isfile(file):
-        openedFile = open(file, 'r')
+    filePath = os.path.join('.', filename)
+    if os.path.isfile(filePath):
+        openedFile = open(filePath, 'r')
         fileContents = openedFile.read()
         if userRegex.search(fileContents):
             print(filename)
