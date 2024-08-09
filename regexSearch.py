@@ -11,8 +11,9 @@ print('Enter a regular expression: ', end='')
 userInput = input()
 userRegex = re.compile(userInput)
 
-
-# TODO: Search cwd for .txt files and open all of them.
+# Search cwd for files and open all of them.
+# Search the contents of the files for a regex match,
+# and print the file if a match is found.
 for filename in os.listdir('.'):
     filePath = os.path.join('.', filename)
     if os.path.isfile(filePath):
