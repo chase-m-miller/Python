@@ -1,7 +1,10 @@
 #! python3
 import os
 
-for folderName, subfolders, filenames in os.walk('.'):
+print('Input a directory to walk: ', end='')
+searchDir = input()
+
+for folderName, subfolders, filenames in os.walk(searchDir):
     print('The current folder is ' + folderName)
 
     for subfolder in subfolders:
