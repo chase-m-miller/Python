@@ -5,6 +5,7 @@
 import zipfile
 import os
 
+
 def backupToZip(folder):
     # Backup the entire contents of "folder" into a ZIP file.
 
@@ -28,7 +29,7 @@ def backupToZip(folder):
         print('Adding files in %s...' % (foldername))
         # Add the current folder to the ZIP file.
         backupZip.write(foldername)
-        
+
         # Add all the files in this folder to the ZIP file.
         for filename in filenames:
             newBase = os.path.basename(folder) + '_'
@@ -37,5 +38,6 @@ def backupToZip(folder):
             backupZip.write(os.path.join(foldername, filename))
     backupZip.close()
     print('Done.')
+
 
 backupToZip('D:\\Programming\\Python\\zipfolder')
