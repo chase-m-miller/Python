@@ -40,4 +40,4 @@ def backupToZip(folder):
     print('Done.')
 
 
-backupToZip('D:\\Programming\\Python\\testdir')
+backupToZip('.')
