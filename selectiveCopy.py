@@ -22,6 +22,6 @@ for folderName, subfolders, filenames in os.walk(searchDir):
         print('FILE INSIDE ' + folderName + ': ' + filename)
         if filename.endswith(".pyw"):
             print('Copying to new directory...')
-            shutil.copy(filename, copyToDir)
+            shutil.copy(os.path.join(folderName, filename), copyToDir)
 
     print('')
