@@ -16,5 +16,7 @@ for folderName, subfolders, filenames in os.walk(searchDir):
 
     for filename in filenames:
         print('FILE INSIDE ' + folderName + ': ' + filename)
+        if filename.endswith(".pyw"):
+            print('FILE IS A .PYW')
 
     print('')
