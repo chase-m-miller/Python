@@ -4,9 +4,13 @@
 # these files from there current location to a new folder.
 
 import os
+import shutil
 
 print('Input a directory to walk: ', end='')
 searchDir = input()
+
+print('Input a directory to copy to: ', end='')
+copyToDir = input()
 
 for folderName, subfolders, filenames in os.walk(searchDir):
     print('The current folder is ' + folderName)
@@ -17,6 +21,7 @@ for folderName, subfolders, filenames in os.walk(searchDir):
     for filename in filenames:
         print('FILE INSIDE ' + folderName + ': ' + filename)
         if filename.endswith(".pyw"):
-            print('FILE IS A .PYW')
+            print('Copying to new directory...')
+            shutil.copy(filename, copyToDir)
 
     print('')
