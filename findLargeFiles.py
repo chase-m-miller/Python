@@ -13,4 +13,5 @@ for dirpath, dirnames, filenames in os.walk(searchDir):
         print('SUBFOLDER: ' + dirname)
 
     for filename in filenames:
-        print('FILENAME: ' + filename)
+        if os.path.getsize(filename) > 1000:
+            print('FILENAME: ' + filename + ' exceeds 1000 bytes.')
