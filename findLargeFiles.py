@@ -4,14 +4,11 @@
 
 import os
 
+minFileSize = 8000  # Files above this size (in bytes) will be printed
 searchDir = os.path.abspath('.')
 
 for dirpath, dirnames, filenames in os.walk(searchDir):
-    print(dirpath + ':')
-
-    for dirname in dirnames:
-        print('SUBFOLDER: ' + dirname)
-
     for filename in filenames:
-        if os.path.getsize(filename) > 1000:
-            print('FILENAME: ' + filename + ' exceeds 1000 bytes.')
+        filePath = os.path.join(dirpath, filename)
+        if os.path.getsize(filePath) > minFileSize:
+            print(filePath + ' exceeds ' + str(minFileSize) + ' bytes.')
