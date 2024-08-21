@@ -5,3 +5,12 @@
 import os
 
 searchDir = os.path.abspath('.')
+
+for dirpath, dirnames, filenames in os.walk(searchDir):
+    print(dirpath + ':')
+
+    for dirname in dirnames:
+        print('SUBFOLDER: ' + dirname)
+
+    for filename in filenames:
+        print('FILENAME: ' + filename)
