@@ -13,3 +13,4 @@ for dirname, foldernames, filenames in os.walk(searchDir):
     for filename in filenames:
         if filePrefix.match(filename):
             print(filename)
+            print(str(1).zfill(3))
