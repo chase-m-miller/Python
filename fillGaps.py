@@ -9,8 +9,11 @@ import re
 searchDir = os.path.join('.', 'spam')
 filePrefix = re.compile(r'^spam([0-9]{3})')
 
+num = 1
 for dirname, foldernames, filenames in os.walk(searchDir):
     for filename in filenames:
         if filePrefix.match(filename):
+            print(num)
+            num = num + 1
             print(filename)
-            print(str(1).zfill(3))
+            # print(str(1).zfill(3))
