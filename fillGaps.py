@@ -7,7 +7,7 @@ import os
 import re
 
 searchDir = os.path.relpath('.')
-filePrefix = re.compile(r'^spam')
+filePrefix = re.compile(r'^spam([0-9]{3})')
 
 for dirname, foldernames, filenames in os.walk(searchDir):
     for filename in filenames:
