@@ -17,8 +17,10 @@ for dirname, foldernames, filenames in os.walk(searchDir):
                 print('IN ORDER')
             else:
                 print('OUT OF ORDER: RENAMING')
+                splitTup = os.path.splitext(filename)
+                fileExtension = splitTup[1]
                 os.rename(os.path.join(searchDir, filename),
-                          os.path.join(searchDir, 'spam' + str(num).zfill(3) + '.txt'))
+                          os.path.join(searchDir, 'spam' + str(num).zfill(3) + fileExtension))
             num = num + 1
             print(filename)
             # print(str(1).zfill(3))
