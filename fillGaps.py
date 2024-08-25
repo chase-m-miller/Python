@@ -6,9 +6,10 @@
 import os
 import re
 
-fileWord = 'spam'
+print('Enter the file prefix you\'d like to sort: ', end='')
+filePrefix = input()
 searchDir = os.path.join('.', 'spam')
-fileRegex = re.compile('^' + fileWord + r'([0-9]{3})')
+fileRegex = re.compile('^' + filePrefix + r'([0-9]{3})')
 
 num = 1
 for dirname, foldernames, filenames in os.walk(searchDir):
