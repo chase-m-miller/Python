@@ -13,8 +13,10 @@ num = 1
 for dirname, foldernames, filenames in os.walk(searchDir):
     for filename in filenames:
         if result := filePrefix.search(filename):
-            print(result.group(1))
-            print(num)
+            if result.group(1) == (str(num).zfill(3)):
+                print('IN ORDER')
+            else:
+                print('OUT OF ORDER')
             num = num + 1
             print(filename)
             # print(str(1).zfill(3))
