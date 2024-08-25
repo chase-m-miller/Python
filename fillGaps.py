@@ -19,5 +19,5 @@ for dirname, foldernames, filenames in os.walk(searchDir):
                 splitTup = os.path.splitext(filename)
                 fileExtension = splitTup[1]
                 os.rename(os.path.join(searchDir, filename),
-                          os.path.join(searchDir, 'spam' + str(num).zfill(3) + fileExtension))
+                          os.path.join(searchDir, filePrefix + str(num).zfill(3) + fileExtension))
             num = num + 1
