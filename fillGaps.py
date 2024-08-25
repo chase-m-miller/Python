@@ -12,7 +12,8 @@ filePrefix = re.compile(r'^spam([0-9]{3})')
 num = 1
 for dirname, foldernames, filenames in os.walk(searchDir):
     for filename in filenames:
-        if filePrefix.match(filename):
+        if result := filePrefix.search(filename):
+            print(result.group(1))
             print(num)
             num = num + 1
             print(filename)
