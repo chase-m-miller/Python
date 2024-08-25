@@ -6,13 +6,14 @@
 import os
 import re
 
+fileWord = 'spam'
 searchDir = os.path.join('.', 'spam')
-filePrefix = re.compile(r'^spam([0-9]{3})')
+fileRegex = re.compile('^' + fileWord + r'([0-9]{3})')
 
 num = 1
 for dirname, foldernames, filenames in os.walk(searchDir):
     for filename in filenames:
-        if result := filePrefix.search(filename):
+        if result := fileRegex.search(filename):
             if result.group(1) != str(num).zfill(3):
                 splitTup = os.path.splitext(filename)
                 fileExtension = splitTup[1]
