@@ -29,3 +29,5 @@ for dirname, foldernames, filenames in os.walk(searchDir):
                 os.rename(os.path.join(searchDir, filename),
                           os.path.join(searchDir, filePrefix + str(num).zfill(3) + fileExtension))
             num = num + 1
+        else:
+            print('No files found matching given prefix.')
