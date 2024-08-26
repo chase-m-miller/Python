@@ -6,10 +6,17 @@
 import os
 import re
 
-print('Enter the directory you\'d like to search: ', end='')
-searchDir = input()
+while True:
+    print('Enter the directory you\'d like to search: ', end='')
+    searchDir = input()
+    if os.path.isdir(searchDir):
+        break
+    else:
+        print('Error: not a valid directory.')
+
 print('Enter the file prefix you\'d like to sort: ', end='')
 filePrefix = input()
+
 fileRegex = re.compile('^' + filePrefix + r'([0-9]{3})')
 
 num = 1
