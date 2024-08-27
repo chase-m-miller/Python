@@ -7,7 +7,7 @@ def boxPrint(symbol, width, height):
         raise Exception('Height must be greater than 2.')
     print(symbol * width)
     for i in range(height - 2):
-        print(symbol + (' ', * (width - 2)) + symbol)
+        print(symbol + (' ' * (width - 2)) + symbol)
     print(symbol * width)
 
 
