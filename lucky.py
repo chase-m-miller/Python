@@ -18,6 +18,7 @@ print('Googling...')  # Display text while downloading the Google page.
 
 res = requests.get('http://google.com/search?q=' + ' '.join(sys.argv[1:]), headers=headers)
 res.raise_for_status()
+logging.debug('Request status code: ' + str(res.status_code))
 
 # Retrieve top search result links.
 soup = bs4.BeautifulSoup(res.text, features='html.parser')
@@ -27,5 +28,5 @@ linkElems = soup.select('.yuRUbf > div > span > a[href]')
 logging.debug('Length of link Elems: ' + str(len(linkElems)))
 numOpen = min(5, len(linkElems))
 for i in range(numOpen):
-    logging.debug('Opening search result...')
-    webbrowser.open('http://google.com' + linkElems[i].get('href'))
+    logging.debug('Opening link: ' + str(linkElems[i].get('href')))
+    webbrowser.open(linkElems[i].get('href'))
