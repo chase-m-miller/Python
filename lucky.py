@@ -18,7 +18,10 @@ res.raise_for_status()
 soup = bs4.BeautifulSoup(res.text, features='html.parser')
 
 # Open a browser tab for each result.
-linkElems = soup.select('.r a')
+linkElems = soup.select('span > a[href]')
+#linkElems = soup.findAll('a', {'jsname': 'UWckNb'})
+logging.debug('Length of link Elems: ' + str(len(linkElems)))
 numOpen = min(5, len(linkElems))
 for i in range(numOpen):
+    logging.debug('Opening search result...')
     webbrowser.open('http://google.com' + linkElems[i].get('href'))
