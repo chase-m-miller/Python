@@ -9,7 +9,13 @@ url = 'http://xkcd.com'             # starting url
 os.makedirs('xkcd', exist_ok=True)  # store comics in ./xkcd
 
 while not url.endswith('#'):
-    # TODO: Download the page.
+    # Download the page.
+    print('Downloading page %s...' % url)
+    res = requests.get(url)
+    res.raise_for_status()
+
+    # Construct BeautifulSoup object from webpage.
+    soup = bs4.BeautifulSoup(res.text)
 
     # TODO: Find the URL of the comic image.
 
