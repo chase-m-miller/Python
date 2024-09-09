@@ -18,6 +18,7 @@ while not url.endswith('#'):
     res.raise_for_status()
 
     # Construct BeautifulSoup object from webpage.
+    logging.debug('Constructing BeautifulSoup object')
     soup = bs4.BeautifulSoup(res.text, features='html.parser')
 
     # Find the URL of the comic image.
@@ -25,7 +26,7 @@ while not url.endswith('#'):
     if comicElem == []:
         print('Could not find comic image.')
     else:
-        comicUrl = comicElem[0].get('src')
+        comicUrl = 'https:' + comicElem[0].get('src')
         # Download the image.
         print('Downloading image %s...' % (comicUrl))
         res = requests.get(comicUrl)
