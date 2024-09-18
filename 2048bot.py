@@ -20,6 +20,8 @@ while True:
         response = input()
         if response.lower() == 'y':
             restartButton.click()
+        else:
+            break
     except selenium.common.exceptions.NoSuchElementException:
         htmlElem.send_keys(Keys.UP)
         htmlElem.send_keys(Keys.DOWN)
