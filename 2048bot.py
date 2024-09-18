@@ -2,7 +2,6 @@
 # 2048bot.py - This program opens a web browser and automatically plays 2048.
 
 import selenium
-import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
@@ -21,6 +20,7 @@ while True:
         if response.lower() == 'y':
             restartButton.click()
         else:
+            browser.close()
             break
     except selenium.common.exceptions.NoSuchElementException:
         htmlElem.send_keys(Keys.UP)
