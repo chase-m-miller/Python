@@ -12,11 +12,10 @@ htmlElem = browser.find_element('tag name', 'html')
 
 
 while True:
-    # Try to find the 'Try again' button, and prompt the user
-    # to start another game if it is found.
+    # Try to find the 'Try again' button.
     try:
         restartButton = browser.find_element('link text', 'Try again')
-        # If the game is over, prompt to start another.
+        # If the button is found, prompt if we should click it.
         print('Game over. Start another? (y/n): ')
         response = input()
         if response.lower() == 'y':
