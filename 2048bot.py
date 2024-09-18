@@ -9,4 +9,8 @@ browser = webdriver.Firefox()
 browser.get('https://gabrielecirulli.github.io/2048/')
 
 htmlElem = browser.find_element('tag name', 'html')
-htmlElem.send_keys(Keys.END)
+while True:
+    htmlElem.send_keys(Keys.UP)
+    htmlElem.send_keys(Keys.DOWN)
+    htmlElem.send_keys(Keys.LEFT)
+    htmlElem.send_keys(Keys.RIGHT)
