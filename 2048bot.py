@@ -23,7 +23,6 @@ while True:
         else:
             browser.close()
             break
-
     # Executes as long as the 'Try again' button is not found.
     except selenium.common.exceptions.NoSuchElementException:
         htmlElem.send_keys(Keys.UP)
