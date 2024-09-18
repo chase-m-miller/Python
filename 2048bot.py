@@ -16,9 +16,10 @@ htmlElem = browser.find_element('tag name', 'html')
 while True:
     try:
         restartButton = browser.find_element('link text', 'Try again')
-        print('Sleeping for 5 seconds.')
-        time.sleep(5)
-        restartButton.click()
+        print('Game over. Start another? (y/n): ')
+        response = input()
+        if response.lower() == 'y':
+            restartButton.click()
     except selenium.common.exceptions.NoSuchElementException:
         htmlElem.send_keys(Keys.UP)
         htmlElem.send_keys(Keys.DOWN)
