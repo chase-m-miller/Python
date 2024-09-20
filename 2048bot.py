@@ -15,7 +15,7 @@ while True:
     # Try to find the 'Try again' button.
     try:
         restartButton = browser.find_element('link text', 'Try again')
-        # If the button is found, prompt if we should click it.
+        # If no exception is thrown, prompt if we should click it.
         print('Game over. Start another? (y/n): ')
         response = input()
         if response.lower() == 'y':
